@@ -1,0 +1,10 @@
+<% if current_user %>
+    <p>Hello <%= current_user.email %>!</p>
+    <p>Vous êtes bien connecté</p>
+
+    <%= link_to "Se déconnecter", destroy_user_session_path, "data-turbo-method": :delete %>
+<% else %>
+    <p>Vous n'êtes pas connecté</p>
+    <%= link_to "Sign up", new_user_registration_path %> <br>
+    <%= link_to "login", new_user_session_path %>
+<% end %>

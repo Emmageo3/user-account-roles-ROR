@@ -1,6 +1,7 @@
 <% if current_user %>
     <p>Hello <%= current_user.email %>!</p>
     <p>Vous êtes bien connecté</p>
+    <p>Vous êtes un [<%= current_user.role %>]</p>
 
     <%= link_to "Se déconnecter", destroy_user_session_path, "data-turbo-method": :delete %>
 <% else %>
